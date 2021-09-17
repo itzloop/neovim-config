@@ -1,0 +1,3 @@
+[submodule "language-servers/lua-language-server"]
+	path = language-servers/lua-language-server
+	url = https://github.com/sumneko/lua-language-server
