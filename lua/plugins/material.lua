@@ -19,7 +19,7 @@
 --				  | 'darker-community'
 
 if vim.fn.has("termguicolors") then
-	vim.o.termguicolors = true
+	vim.opt.termguicolors = true
 end
 
 vim.g.material_theme_style = 'ocean'

@@ -7,8 +7,7 @@ vim.cmd([[
 ]])
 
 
-local plugins = function(use) 
-  
+local plugins = function(use)
   use 'wbthomason/packer.nvim'
 	use 'kaicataldo/material.vim'
 	use {
@@ -17,7 +16,7 @@ local plugins = function(use)
 	}
 
 	-- native lsp plugin
-	use 'neovim/nvim-lspconfig' 
+	use 'neovim/nvim-lspconfig'
 
 	-- completion plugin
 	use {
@@ -30,7 +29,6 @@ local plugins = function(use)
 	  }
 	}
 
-	
   -- treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
 
@@ -44,12 +42,13 @@ local plugins = function(use)
   -- install some plugins for comenting
   -- auto pairs
 	-- use "windwp/nvim-autopairs"
-
+  -- tabline up top
+  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 end
 
 local packer = require('packer').startup(plugins)
 
 -- configure plugins
-require("plugins.config")
+require("plugins.init")
 
 return packer
