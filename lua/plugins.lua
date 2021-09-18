@@ -8,7 +8,8 @@ vim.cmd([[
 
 
 local plugins = function(use) 
-
+  
+  use 'wbthomason/packer.nvim'
 	use 'kaicataldo/material.vim'
 	use {
 	    	'kyazdani42/nvim-tree.lua',
@@ -24,8 +25,26 @@ local plugins = function(use)
 	  requires = {
 	    "hrsh7th/vim-vsnip",
 	    "hrsh7th/cmp-buffer",
+	    "hrsh7th/cmp-nvim-lsp",
+	    "hrsh7th/cmp-vsnip"
 	  }
 	}
+
+	
+  -- treesitter
+  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+
+  -- telescope
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
+  -- TODO
+  -- install fzf on terminal
+  -- install some plugins for comenting
+  -- auto pairs
+	-- use "windwp/nvim-autopairs"
+
 end
 
 local packer = require('packer').startup(plugins)

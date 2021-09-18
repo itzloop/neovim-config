@@ -1,4 +1,4 @@
-require("plugins")
 require("mappings")
+require("plugins")
 require("settings")
 require("lsp.init")
