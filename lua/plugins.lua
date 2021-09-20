@@ -35,13 +35,16 @@ local plugins = function(use)
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = { {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-fzy-native.nvim'} }
   }
   -- TODO
   -- install fzf on terminal
+
   -- install some plugins for comenting
+  use 'terrortylor/nvim-comment'
+
   -- auto pairs
-	-- use "windwp/nvim-autopairs"
+  use 'jiangmiao/auto-pairs'
   -- tabline up top
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
 end

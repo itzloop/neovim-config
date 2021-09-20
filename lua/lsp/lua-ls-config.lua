@@ -98,3 +98,10 @@ nvim_lsp.gopls.setup{
       debounce_text_changes = 150,
   },
 }
+
+nvim_lsp.tsserver.setup{
+  on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+  },
+}

@@ -37,4 +37,8 @@ vim.o.relativenumber = true
 
 -- You can't stop me
 -- vim.cmd("cmap w!! w !sudo tee %")
+vim.cmd([[augroup custom_term
+    autocmd!
+    autocmd TermOpen * setlocal bufhidden=hide
+augroup END]])
 
