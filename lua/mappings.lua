@@ -54,3 +54,5 @@ set_key("n", "<Leader>ff", ":Telescope find_files<CR>", {noremap = true, silent 
 set_key("n", "<Leader>fg", ":Telescope live_grep<CR>", {noremap = true, silent = true} )
 set_key("n", "<Leader>fb", ":Telescope buffers<CR>", {noremap = true, silent = true} )
 set_key("n", "<Leader>fh", ":Telescope help_tags<CR>", {noremap = true, silent = true} )
+set_key("n", "<Leader>@", ":Telescope treesitter<CR>", {noremap = true, silent = true} )
+
