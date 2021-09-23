@@ -47,6 +47,9 @@ local plugins = function(use)
   use 'jiangmiao/auto-pairs'
   -- tabline up top
   use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+
+  -- terminal management
+  use { "akinsho/toggleterm.nvim" }
 end
 
 local packer = require('packer').startup(plugins)

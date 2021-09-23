@@ -22,7 +22,7 @@ vim.o.laststatus= 0                        -- Always display the status line
 vim.o.number = true                             -- Line numbers
 vim.o.cursorline = true                         -- Enable highlighting of the current line
 vim.o.background= "dark"                     -- tell vim what the background color looks like
-vim.o.showtabline=2                     -- Always show tabs
+-- vim.o.showtabline=2                     -- Always show tabs
 vim.o.showmode = false                          -- We don't need to see things like -- INSERT -- anymore
 -- This is recommended by coc
 vim.o.backup = false

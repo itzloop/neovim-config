@@ -37,7 +37,7 @@ set_key("x", "J", ":move '>+1<CR>gv-gv'", { noremap = true, silent = true} )
 set_key("x", "K", ":move '<-2<CR>gv-gv'", { noremap = true, silent = true} )
 
 -- Terminal mappings
-set_key("n", "<Leader>t", ":botright 20sp term://$SHELL<CR>i", { noremap = true, silent = true} )
+-- set_key("n", "<Leader>t", ":botright 20sp term://$SHELL<CR>i", { noremap = true, silent = true} )
 
 -- Exit out of terminal mode with jk
 set_key("t", "jk", "<C-\\><C-n>", { noremap = true, silent = true} )
