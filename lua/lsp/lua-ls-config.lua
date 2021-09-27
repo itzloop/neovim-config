@@ -19,7 +19,7 @@ local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 local function setup(on_attach)
-  print("setting up lua ls")
+  -- print("setting up lua ls")
   nvim_lsp.sumneko_lua.setup {
       capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities()),
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};

@@ -10,7 +10,7 @@ vim.g.mapleader = " "
 set_key("n", "<Leader>h", ":set hlsearch!<CR>", { noremap = true, silent = true} )
 
 -- toggle Lexplore
-set_key("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true} )
+-- set_key("n", "<Leader>e", ":NvimTreeToggle<CR>", { noremap = true, silent = true} )
 
 
 -- better windows movement
@@ -56,3 +56,13 @@ set_key("n", "<Leader>fb", ":Telescope buffers<CR>", {noremap = true, silent = t
 set_key("n", "<Leader>fh", ":Telescope help_tags<CR>", {noremap = true, silent = true} )
 set_key("n", "<Leader>@", ":Telescope treesitter<CR>", {noremap = true, silent = true} )
 
+-- explorer
+set_key("n", "<Leader>e", ":Telescope file_browser<CR>", {noremap = true, silent = true} )
+
+-- line/block movement
+set_key("v", "J", ":m '>+1<CR>gv=gv", {noremap = true, silent = true} )
+set_key("v", "K", ":m '<-2<CR>gv=gv", {noremap = true, silent = true} )
+set_key("i", "<C-j>", ":<ESC>:m .+1<CR>==", {noremap = true, silent = true} )
+set_key("i", "<C-k>", ":<ESC>:m .-2<CR>==", {noremap = true, silent = true} )
+set_key("n", "<Leader>j", ":<ESC>:m .+1<CR>==", {noremap = true, silent = true} )
+set_key("n", "<Leader>k", ":<ESC>:m .-2<CR>==", {noremap = true, silent = true} )

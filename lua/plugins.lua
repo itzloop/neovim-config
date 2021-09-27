@@ -10,10 +10,12 @@ vim.cmd([[
 local plugins = function(use)
   use 'wbthomason/packer.nvim'
 	use 'kaicataldo/material.vim'
-	use {
-	    	'kyazdani42/nvim-tree.lua',
-    		requires = 'kyazdani42/nvim-web-devicons'
-	}
+
+  -- removed in favor of telescope file_browser
+  -- use {
+	--     	'kyazdani42/nvim-tree.lua',
+	--     		requires = 'kyazdani42/nvim-web-devicons'
+	-- }
 
 	-- native lsp plugin
 	use 'neovim/nvim-lspconfig'

@@ -144,7 +144,7 @@ end
 function M.new_buf()
   local buf_handle = api.nvim_create_buf(false, false)
   if buf_handle == 0 then
-    print("error opening buffer")
+    -- print("error opening buffer")
     return nil
   end
 
@@ -160,7 +160,7 @@ function M.update_dimentions()
     curr_term = 0,
     term_open = false
   }
-  print(vim.inspect(M.data))
+  -- print(vim.inspect(M.data))
 
 end
 
