@@ -5,4 +5,5 @@ require("plugins.autopairs")
 require("plugins.telescope")
 require("plugins.nvim-commenter")
 require("plugins.treesitter")
-
+require("plugins.gitsigns")
+require("plugins.colorizer")

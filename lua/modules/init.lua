@@ -1,15 +1,20 @@
 require("modules.terminal").setup{}
 
-modules = {
+local modules = {
   {
     name = "modules.terminal",
+    config = {}
+  },
+  {
+    name = "modules.statusline",
     config = {}
   }
 }
 
 -- reload modules
-function reload_modules() 
-  for i, module in pairs(modules) do
+function reload_modules()
+  print("hello")
+  for _, module in pairs(modules) do
     for k in pairs(package.loaded) do
       if k:match(module.name) then
         package.loaded[k] = nil
