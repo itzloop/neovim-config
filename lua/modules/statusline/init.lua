@@ -58,9 +58,9 @@ function M.init()
 end
 
 function M.git_status()
-  local signs = vim.b.gitsigns_status_dict
+  local signs = vim.b.gitsigns_status_dict or { added = "", changed = "", removed = "", head = "" }
   if signs == nil then
-    M.print("gitsigns is required")
+    -- M.print("gitsigns is required")
     return ""
   end
   local git_icon = ""
