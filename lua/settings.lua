@@ -42,3 +42,5 @@ vim.cmd([[augroup custom_term
     autocmd TermOpen * setlocal bufhidden=hide
 augroup END]])
 
+-- prefer *tex over others
+vim.g.tex_flavor = "latex"

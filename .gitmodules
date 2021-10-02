@@ -1,3 +1,6 @@
 [submodule "language-servers/lua-language-server"]
 	path = language-servers/lua-language-server
 	url = https://github.com/sumneko/lua-language-server
+[submodule "language-servers/texlab"]
+	path = language-servers/texlab
+	url = https://github.com/latex-lsp/texlab

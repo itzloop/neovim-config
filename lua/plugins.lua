@@ -65,6 +65,12 @@ local plugins = function(use)
 
   -- color highlights
   use { 'norcalli/nvim-colorizer.lua' }
+
+  -- markdown preview
+  use { 'iamcco/markdown-preview.nvim' }
+
+  -- latex preview
+  use { 'xuhdev/vim-latex-live-preview' }
 end
 
 local packer = require('packer').startup(plugins)
