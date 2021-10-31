@@ -66,3 +66,9 @@ set_key("i", "<C-j>", ":<ESC>:m .+1<CR>==", {noremap = true, silent = true} )
 set_key("i", "<C-k>", ":<ESC>:m .-2<CR>==", {noremap = true, silent = true} )
 set_key("n", "<Leader>j", ":<ESC>:m .+1<CR>==", {noremap = true, silent = true} )
 set_key("n", "<Leader>k", ":<ESC>:m .-2<CR>==", {noremap = true, silent = true} )
+
+-- fugitive
+set_key("n", "<Leader>gh", ":diffget //2<CR>", { silent = true} )
+set_key("n", "<Leader>gl", ":diffget //3<CR>", { silent = true} )
+set_key("n", "<Leader>gs", ":G<CR>", { silent = true} )
+
