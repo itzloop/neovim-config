@@ -44,3 +44,5 @@ augroup END]])
 
 -- prefer *tex over others
 vim.g.tex_flavor = "latex"
+
+vim.o.arabicshape = false

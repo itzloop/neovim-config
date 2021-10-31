@@ -71,6 +71,8 @@ local plugins = function(use)
 
   -- latex preview
   use { 'xuhdev/vim-latex-live-preview' }
+
+  use { 'tpope/vim-fugitive' }
 end
 
 local packer = require('packer').startup(plugins)
