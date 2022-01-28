@@ -48,3 +48,4 @@ require("lsp.ccls-config")(on_attach)
 require("lsp.latex-ls-config")(on_attach)
 require("lsp.html-ls-config")(on_attach)
 require("lsp.ansible-ls-config")(on_attach)
+require'lspconfig'.bashls.setup{}
