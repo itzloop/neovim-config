@@ -1,6 +1,5 @@
--- automatically run :PackerCompile whenever plugins.lua is updated
--- vim.cmd([[
---   augroup packer_user_config
+-- automatically run :PackerCompile whenever plugins.lua is updatedA
+-- vim.cmd([[ augroup packer_user_config
 --     autocmd!
 --     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
 --   augroup end
@@ -39,9 +38,11 @@ local plugins = function(use)
     'nvim-telescope/telescope.nvim',
     requires = { {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-fzy-native.nvim'} }
   }
-  -- TODO
-  -- install fzf on terminal
 
+  use 'mfussenegger/nvim-dap'
+	use 'ray-x/go.nvim'
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
   -- install some plugins for comenting
   use 'terrortylor/nvim-comment'
 
@@ -67,17 +68,17 @@ local plugins = function(use)
   use { 'norcalli/nvim-colorizer.lua' }
 
   -- markdown preview
-  use { 'iamcco/markdown-preview.nvim' }
-
+  use {'iamcco/markdown-preview.nvim'}
   -- latex preview
   use { 'xuhdev/vim-latex-live-preview' }
 
   use { 'tpope/vim-fugitive' }
+
 end
 
 local packer = require('packer').startup(plugins)
 
 -- configure plugins
 require("plugins.init")
-
+require('go').setup()
 return packer

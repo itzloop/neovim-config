@@ -42,6 +42,9 @@ vim.cmd([[augroup custom_term
     autocmd TermOpen * setlocal bufhidden=hide
 augroup END]])
 
+vim.cmd([[
+autocmd BufWritePre *.go :silent! lua require('go.format').gofmt()
+]])
 -- prefer *tex over others
 vim.g.tex_flavor = "latex"
 
