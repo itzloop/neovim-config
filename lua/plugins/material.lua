@@ -22,6 +22,20 @@ if vim.fn.has("termguicolors") then
 	vim.opt.termguicolors = true
 end
 
-vim.g.material_theme_style = 'ocean'
-vim.g.material_terminal_italics = 1
-vim.cmd("colorscheme material")
+-- vim.g.material_theme_style = 'ocean'
+-- vim.g.material_terminal_italics = 1
+-- vim.cmd("colorscheme material")
+
+
+function SetColorScheme(scheme)
+	scheme = scheme or "material"
+	vim.cmd.colorscheme(scheme)
+end
+
+function SetTheme(theme)
+	theme = theme or "deep ocean"
+	vim.g.material_style = "deep ocean"
+end
+
+SetColorScheme()
+SetTheme()

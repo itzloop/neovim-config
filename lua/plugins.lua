@@ -1,34 +1,37 @@
--- automatically run :PackerCompile whenever plugins.lua is updatedA
--- vim.cmd([[ augroup packer_user_config
---     autocmd!
---     autocmd BufWritePost plugins.lua source <afile> | PackerCompile
---   augroup end
--- ]])
-
-
 local plugins = function(use)
   use 'wbthomason/packer.nvim'
-	use 'kaicataldo/material.vim'
+	-- use 'kaicataldo/material.vim'
 
+	use 'marko-cerovac/material.nvim'
   -- removed in favor of telescope file_browser
   -- use {
 	--     	'kyazdani42/nvim-tree.lua',
 	--     		requires = 'kyazdani42/nvim-web-devicons'
 	-- }
+	--
+	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+	use "folke/neodev.nvim"
 
-	-- native lsp plugin
-	use 'neovim/nvim-lspconfig'
-
-	-- completion plugin
 	use {
-	  "hrsh7th/nvim-cmp",
-	  requires = {
-	    "hrsh7th/vim-vsnip",
-	    "hrsh7th/cmp-buffer",
-	    "hrsh7th/cmp-nvim-lsp",
-	    "hrsh7th/cmp-vsnip"
-	  }
+		'VonHeikemen/lsp-zero.nvim',
+		branch = 'v2.x',
+		requires = {
+			-- LSP Support
+			{'neovim/nvim-lspconfig'},             -- Required
+			{                                      -- Optional
+			'williamboman/mason.nvim',
+			run = function()
+				pcall(vim.cmd, 'MasonUpdate')
+			end,
+		},
+		{'williamboman/mason-lspconfig.nvim'}, -- Optional
+
+		-- Autocompletion
+		{'hrsh7th/nvim-cmp'},     -- Required
+		{'hrsh7th/cmp-nvim-lsp'}, -- Required
+		{'L3MON4D3/LuaSnip'},     -- Required
 	}
+}
 
   -- treesitter
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
@@ -39,9 +42,6 @@ local plugins = function(use)
     requires = { {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-fzy-native.nvim'} }
   }
 
-  use 'mfussenegger/nvim-dap'
-	use 'ray-x/go.nvim'
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
   -- install some plugins for comenting
   use 'terrortylor/nvim-comment'
@@ -68,9 +68,9 @@ local plugins = function(use)
   use { 'norcalli/nvim-colorizer.lua' }
 
   -- markdown preview
-  use {'iamcco/markdown-preview.nvim'}
+  -- use {'iamcco/markdown-preview.nvim'}
   -- latex preview
-  use { 'xuhdev/vim-latex-live-preview' }
+  -- use { 'xuhdev/vim-latex-live-preview' }
 
   use { 'tpope/vim-fugitive' }
 
@@ -80,5 +80,4 @@ local packer = require('packer').startup(plugins)
 
 -- configure plugins
 require("plugins.init")
-require('go').setup()
 return packer

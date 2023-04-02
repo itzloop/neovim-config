@@ -1,4 +1,4 @@
-local set_key = vim.api.nvim_set_keymap
+local set_key = vim.keymap.set
 
 -- setting no-ops
 set_key("i", "<C-Space>", "<NOP>", { noremap = true, silent = true } )
