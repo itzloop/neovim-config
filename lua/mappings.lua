@@ -1,11 +1,9 @@
 local set_key = vim.keymap.set
+vim.g.mapleader = " "
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- setting no-ops
 set_key("i", "<C-Space>", "<NOP>", { noremap = true, silent = true } )
-
--- set the leader key to <Space>
-set_key("n", "<Space>", "<NOP>", { noremap = true, silent = true } )
-vim.g.mapleader = " "
 
 set_key("n", "<Leader>h", ":set hlsearch!<CR>", { noremap = true, silent = true} )
 
@@ -72,3 +70,9 @@ set_key("n", "<Leader>gh", ":diffget //2<CR>", { silent = true} )
 set_key("n", "<Leader>gl", ":diffget //3<CR>", { silent = true} )
 set_key("n", "<Leader>gs", ":G<CR>", { silent = true} )
 
+set_key("n", "<C-d>", "<C-d>zz")
+set_key("n", "<C-u>", "<C-u>zz")
+
+set_key("x", "<leader>p", "\"_dP")
+
+set_key("n", "<leader>x", "<cmd>!chmod +x %<CR>", {silent = true})

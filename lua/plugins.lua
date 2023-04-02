@@ -1,7 +1,6 @@
 local plugins = function(use)
   use 'wbthomason/packer.nvim'
 	-- use 'kaicataldo/material.vim'
-
 	use 'marko-cerovac/material.nvim'
   -- removed in favor of telescope file_browser
   -- use {
@@ -11,6 +10,9 @@ local plugins = function(use)
 	--
 	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use "folke/neodev.nvim"
+
+  use 'nvim-lua/plenary.nvim'
+  use 'ThePrimeagen/harpoon'
 
 	use {
 		'VonHeikemen/lsp-zero.nvim',
@@ -77,6 +79,8 @@ local plugins = function(use)
 end
 
 local packer = require('packer').startup(plugins)
+
+-- TODO add harpoon
 
 -- configure plugins
 require("plugins.init")
