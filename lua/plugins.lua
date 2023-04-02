@@ -7,8 +7,13 @@ local plugins = function(use)
 	--     	'kyazdani42/nvim-tree.lua',
 	--     		requires = 'kyazdani42/nvim-web-devicons'
 	-- }
-	--
-	use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+  }
+
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 	use "folke/neodev.nvim"
 
   use 'nvim-lua/plenary.nvim'
@@ -44,7 +49,6 @@ local plugins = function(use)
     requires = { {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-fzy-native.nvim'} }
   }
 
-	use {'ray-x/guihua.lua', run = 'cd lua/fzy && make'}
   -- install some plugins for comenting
   use 'terrortylor/nvim-comment'
 

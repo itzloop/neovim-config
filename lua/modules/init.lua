@@ -5,10 +5,10 @@ local modules = {
     name = "modules.terminal",
     config = {}
   },
-  {
-    name = "modules.statusline",
-    config = {}
-  }
+  -- {
+  --   name = "modules.statusline",
+  --   config = {}
+  -- }
 }
 
 -- reload modules
