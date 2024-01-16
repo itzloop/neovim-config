@@ -1,7 +1,5 @@
-local dap = require("dap")
-
-print("setting up go debugger")
-dap.adapters.delve = {
+-- print("setting up go debugger")
+require("dap").adapters.delve = {
   type = 'server',
   port = '${port}',
   executable = {
@@ -10,26 +8,28 @@ dap.adapters.delve = {
   }
 }
 
-dap.configurations.go = {
-  {
-    type = "delve",
-    name = "Debug",
-    request = "launch",
-    program = "${file}"
-  },
-  {
-    type = "delve",
-    name = "Debug test", -- configuration for debugging test files
-    request = "launch",
-    mode = "test",
-    program = "${file}"
-  },
-  -- works with go.mod packages and sub packages 
-  {
-    type = "delve",
-    name = "Debug test (go.mod)",
-    request = "launch",
-    mode = "test",
-    program = "./${relativeFileDirname}"
-  }
-}
+require('dap-go').setup()
+
+-- dap.configurations.go = {
+--   {
+--     type = "delve",
+--     name = "Debug",
+--     request = "launch",
+--     program = "${file}"
+--   },
+--   {
+--     type = "delve",
+--     name = "Debug test", -- configuration for debugging test files
+--     request = "launch",
+--     mode = "test",
+--     program = "${file}"
+--   },
+--   -- works with go.mod packages and sub packages 
+--   {
+--     type = "delve",
+--     name = "Debug test (go.mod)",
+--     request = "launch",
+--     mode = "test",
+--     program = "./${relativeFileDirname}"
+--   }
+-- }

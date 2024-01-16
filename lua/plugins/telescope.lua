@@ -9,7 +9,7 @@ vim.keymap.set("n", "<Leader>fb", ":Telescope buffers<CR>", opts )
 vim.keymap.set("n", "<Leader>fh", ":Telescope help_tags<CR>", opts )
 vim.keymap.set("n", "<Leader>@", ":Telescope treesitter<CR>", opts )
 vim.keymap.set("n", "<Leader>e", ":Telescope file_browser<CR>", opts )
-
+vim.keymap.set("n", "<Leader>ds", ":Telescope lsp_document_symbols<CR>", opts )
 -- setup
 telescope.setup {
   extensions = {

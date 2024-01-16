@@ -12,3 +12,5 @@ require("plugins.dapui")
 require("plugins.harpoon")
 require("plugins.lualine")
 require("plugins.neodev")
+
+require("mason").setup()

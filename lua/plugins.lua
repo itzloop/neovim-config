@@ -1,85 +1,89 @@
 local plugins = function(use)
-  use 'wbthomason/packer.nvim'
-	-- use 'kaicataldo/material.vim'
-	use 'marko-cerovac/material.nvim'
-  -- removed in favor of telescope file_browser
-  -- use {
-	--     	'kyazdani42/nvim-tree.lua',
-	--     		requires = 'kyazdani42/nvim-web-devicons'
-	-- }
+    use 'wbthomason/packer.nvim'
+    -- use 'kaicataldo/material.vim'
+    use 'marko-cerovac/material.nvim'
+    -- removed in favor of telescope file_browser
+    -- use {
+    --     	'kyazdani42/nvim-tree.lua',
+    --     		requires = 'kyazdani42/nvim-web-devicons'
+    -- }
+    
+    -- ================== DAP Plugins ==================
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "folke/neodev.nvim" }}
+    use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap", "nvim-treesitter" }}
+    use { "leoluz/nvim-dap-go", requires = "rcarriga/nvim-dap-ui"}
 
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-  }
+    use 'wakatime/vim-wakatime'
 
-  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-	use "folke/neodev.nvim"
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
 
-  use 'nvim-lua/plenary.nvim'
-  use 'ThePrimeagen/harpoon'
 
-	use {
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v2.x',
-		requires = {
-			-- LSP Support
-			{'neovim/nvim-lspconfig'},             -- Required
-			{                                      -- Optional
-			'williamboman/mason.nvim',
-			run = function()
-				pcall(vim.cmd, 'MasonUpdate')
-			end,
-		},
-		{'williamboman/mason-lspconfig.nvim'}, -- Optional
+    use 'nvim-lua/plenary.nvim'
+    use 'ThePrimeagen/harpoon'
 
-		-- Autocompletion
-		{'hrsh7th/nvim-cmp'},     -- Required
-		{'hrsh7th/cmp-nvim-lsp'}, -- Required
-		{'L3MON4D3/LuaSnip'},     -- Required
-	}
-}
+    use {
+        'VonHeikemen/lsp-zero.nvim',
+        branch = 'v2.x',
+        requires = {
+            -- LSP Support
+            { 'neovim/nvim-lspconfig' }, -- Required
+            {                            -- Optional
+                'williamboman/mason.nvim',
+                run = function()
+                    pcall(vim.cmd, 'MasonUpdate')
+                end,
+            },
+            { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
-  -- treesitter
-  use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+            -- Autocompletion
+            { 'hrsh7th/nvim-cmp' },     -- Required
+            { 'hrsh7th/cmp-nvim-lsp' }, -- Required
+            { 'L3MON4D3/LuaSnip' },     -- Required
+        }
+    }
 
-  -- telescope
-  use {
-    'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'}, {'nvim-telescope/telescope-fzy-native.nvim'} }
-  }
+    -- treesitter
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
-  -- install some plugins for comenting
-  use 'terrortylor/nvim-comment'
+    -- telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = { { 'nvim-lua/plenary.nvim' }, { 'nvim-telescope/telescope-fzy-native.nvim' } }
+    }
 
-  -- auto pairs
-  use 'jiangmiao/auto-pairs'
-  -- tabline up top
-  use {'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons'}
+    -- install some plugins for comenting
+    use 'terrortylor/nvim-comment'
 
-  -- terminal management
-  use { "akinsho/toggleterm.nvim" }
+    -- auto pairs
+    use 'jiangmiao/auto-pairs'
+    -- tabline up top
+    use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
-  use { "kyazdani42/nvim-web-devicons" }
+    -- terminal management
+    use { "akinsho/toggleterm.nvim" }
 
-  use {
-    'lewis6991/gitsigns.nvim',
-    requires = {
-      'nvim-lua/plenary.nvim'
-    },
-    -- tag = 'release' -- To use the latest release
-  }
+    use { "kyazdani42/nvim-web-devicons" }
 
-  -- color highlights
-  use { 'norcalli/nvim-colorizer.lua' }
+    use {
+        'lewis6991/gitsigns.nvim',
+        requires = {
+            'nvim-lua/plenary.nvim'
+        },
+        -- tag = 'release' -- To use the latest release
+    }
 
-  -- markdown preview
-  -- use {'iamcco/markdown-preview.nvim'}
-  -- latex preview
-  -- use { 'xuhdev/vim-latex-live-preview' }
+    -- color highlights
+    use { 'norcalli/nvim-colorizer.lua' }
 
-  use { 'tpope/vim-fugitive' }
+    -- markdown preview
+    -- use {'iamcco/markdown-preview.nvim'}
+    -- latex preview
+    -- use { 'xuhdev/vim-latex-live-preview' }
 
+    use { 'tpope/vim-fugitive' }
 end
 
 local packer = require('packer').startup(plugins)
