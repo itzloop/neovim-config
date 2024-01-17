@@ -1,6 +1,5 @@
 -- For Neovim 0.1.3 and 0.1.4 - https://github.com/neovim/neovim/pull/2198
--- if (has('nvim'))
---   let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
+-- if (has('nvim')) let $NVIM_TUI_ENABLE_TRUE_COLOR = 1
 -- endif
 
 
@@ -52,7 +51,7 @@ material.setup({
         -- Available plugins:
         "dap",
         -- "dashboard",
-        -- "gitsigns",
+        "gitsigns",
         -- "hop",
         -- "indent-blankline",
         -- "lspsaga",
@@ -79,7 +78,7 @@ material.setup({
 
     high_visibility = {
         lighter = false, -- Enable higher contrast text for lighter style
-        darker = false -- Enable higher contrast text for darker style
+        darker = true -- Enable higher contrast text for darker style
     },
 
     lualine_style = "stealth", -- Lualine style ( can be 'stealth' or 'default' )
@@ -101,5 +100,5 @@ function SetTheme()
 end
 
 vim.cmd.colorscheme("material")
-vim.g.material_style = "deep ocean"
+vim.g.material_style = "darker"
 

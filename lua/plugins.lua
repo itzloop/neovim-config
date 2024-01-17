@@ -1,13 +1,14 @@
 local plugins = function(use)
     use 'wbthomason/packer.nvim'
-    -- use 'kaicataldo/material.vim'
+
+    -- ================== Themes ==================
     use 'marko-cerovac/material.nvim'
     -- removed in favor of telescope file_browser
     -- use {
     --     	'kyazdani42/nvim-tree.lua',
     --     		requires = 'kyazdani42/nvim-web-devicons'
     -- }
-    
+
     -- ================== DAP Plugins ==================
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "folke/neodev.nvim" }}
     use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap", "nvim-treesitter" }}
