@@ -1,6 +1,14 @@
 local plugins = function(use)
     use 'wbthomason/packer.nvim'
 
+    -- ================== Auto Save ==================
+    use({
+        "Pocco81/auto-save.nvim",
+        config = function()
+            require("auto-save").setup()
+        end,
+    })
+
     -- ================== Themes ==================
     use 'marko-cerovac/material.nvim'
     -- removed in favor of telescope file_browser
@@ -10,9 +18,9 @@ local plugins = function(use)
     -- }
 
     -- ================== DAP Plugins ==================
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "folke/neodev.nvim" }}
-    use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap", "nvim-treesitter" }}
-    use { "leoluz/nvim-dap-go", requires = "rcarriga/nvim-dap-ui"}
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "folke/neodev.nvim", "nvim-neotest/nvim-nio" } }
+    use { "theHamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap", "nvim-treesitter" } }
+    use { "leoluz/nvim-dap-go", requires = "rcarriga/nvim-dap-ui" }
 
     use 'wakatime/vim-wakatime'
 
@@ -59,7 +67,15 @@ local plugins = function(use)
     use 'terrortylor/nvim-comment'
 
     -- auto pairs
-    use 'jiangmiao/auto-pairs'
+    -- use 'jiangmiao/auto-pairs'
+
+    use {
+        "windwp/nvim-autopairs",
+        event = "InsertEnter",
+        config = function()
+            require("nvim-autopairs").setup {}
+        end
+    }
     -- tabline up top
     use { 'akinsho/bufferline.nvim', requires = 'kyazdani42/nvim-web-devicons' }
 
@@ -80,7 +96,14 @@ local plugins = function(use)
     use { 'norcalli/nvim-colorizer.lua' }
 
     -- markdown preview
-    -- use {'iamcco/markdown-preview.nvim'}
+    -- install without yarn or npm
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
+
+    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = {
+            "markdown" } end, ft = { "markdown" }, })
     -- latex preview
     -- use { 'xuhdev/vim-latex-live-preview' }
 

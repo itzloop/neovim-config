@@ -12,11 +12,17 @@ set_key("n", "<Leader>h", ":set hlsearch!<CR>", { noremap = true, silent = true}
 
 
 -- better windows movement
-set_key("n", "<C-h>", "<C-w>h", { silent = true} )
-set_key("n", "<C-j>", "<C-w>j", { silent = true} )
-set_key("n", "<C-l>", "<C-w>l", { silent = true} )
-set_key("n", "<C-k>", "<C-w>k", { silent = true} )
+-- set_key("n", "<C-h>", "<C-w>h", { silent = true} )
+-- set_key("n", "<C-j>", "<C-w>j", { silent = true} )
+-- set_key("n", "<C-l>", "<C-w>l", { silent = true} )
+-- set_key("n", "<C-k>", "<C-w>k", { silent = true} )
 
+-- better windows resizeing
+--
+set_key("n", "<C-Up>", ":resize -2<CR>")
+set_key("n", "<C-Down>", ":resize +2<CR>")
+set_key("n", "<C-Left>", ":vertical resize -2<CR>")
+set_key("n", "<C-Right>", ":vertical resize +2<CR>")
 
 -- exit out of insert mode easier
 set_key("i", "jk", "<Esc>", { noremap = true, silent = true} )
@@ -40,12 +46,6 @@ set_key("x", "K", ":move '<-2<CR>gv-gv'", { noremap = true, silent = true} )
 -- Exit out of terminal mode with jk
 set_key("t", "jk", "<C-\\><C-n>", { noremap = true, silent = true} )
 set_key("t", "kj", "<C-\\><C-n>", { noremap = true, silent = true} )
-
--- better window navigation in terminal mode
-set_key("t", "<C-h>", "jk<C-w>h", { silent = true} )
-set_key("t", "<C-j>", "jk<C-w>j", { silent = true} )
-set_key("t", "<C-l>", "jk<C-w>l", { silent = true} )
-set_key("t", "<C-k>", "jk<C-w>k", { silent = true} )
 
 -- Find files
 set_key("n", "<Leader>ff", ":Telescope find_files<CR>", {noremap = true, silent = true} )
