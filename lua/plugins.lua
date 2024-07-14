@@ -54,6 +54,13 @@ local plugins = function(use)
         }
     }
 
+    use {
+        "nvim-telescope/telescope.nvim",
+        requires = {
+            { "nvim-telescope/telescope-live-grep-args.nvim" },
+        }
+    }
+
     -- treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
@@ -96,18 +103,21 @@ local plugins = function(use)
     use { 'norcalli/nvim-colorizer.lua' }
 
     -- markdown preview
-    -- install without yarn or npm
     use({
         "iamcco/markdown-preview.nvim",
-        run = function() vim.fn["mkdp#util#install"]() end,
+        run = "cd app && npm install",
+        setup = function()
+            vim.g.mkdp_filetypes = {
+                "markdown" }
+        end,
+        ft = { "markdown" },
     })
-
-    use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = {
-            "markdown" } end, ft = { "markdown" }, })
     -- latex preview
     -- use { 'xuhdev/vim-latex-live-preview' }
 
     use { 'tpope/vim-fugitive' }
+
+    use { 'nvim-lua/lsp-status.nvim' }
 end
 
 local packer = require('packer').startup(plugins)

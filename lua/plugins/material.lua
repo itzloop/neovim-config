@@ -27,7 +27,6 @@ end
 local material = require('material')
 local material_functions = require('material.functions')
 material.setup({
-
     contrast = {
         terminal = false, -- Enable contrast for the built-in terminal
         sidebars = false, -- Enable contrast for sidebar-like windows ( for example Nvim-Tree )
@@ -99,6 +98,6 @@ function SetTheme()
   require("material.functions").find_style()
 end
 
-vim.cmd.colorscheme("material")
 vim.g.material_style = "darker"
+vim.cmd('colorscheme material')
 
