@@ -1,7 +1,8 @@
 require("mappings")
-require("plugins")
 require("settings")
-require("lsp.init")
-require("modules")
-require("utils")
-require("debugger")
+require("config.lazy")
+-- TODO(sina): Fix these
+-- require("lsp.init")
+-- require("modules")
+-- require("utils")
+-- require("debugger")

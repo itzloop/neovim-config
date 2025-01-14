@@ -1,5 +1,10 @@
 local set_key = vim.keymap.set
+
+-- set leaders
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+-- :Explore shortcut
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- setting no-ops
