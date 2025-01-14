@@ -12,5 +12,5 @@ require("plugins.dapui")
 require("plugins.lualine")
 require("plugins.harpoon")
 require("plugins.neodev")
-
 require("mason").setup()
+require("plugins.nvim-lint")

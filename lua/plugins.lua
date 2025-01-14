@@ -1,5 +1,8 @@
-local plugins = function(use)
+require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
+
+    -- linters
+    use 'mfussenegger/nvim-lint'
 
     -- ================== Auto Save ==================
     use({
@@ -11,11 +14,6 @@ local plugins = function(use)
 
     -- ================== Themes ==================
     use 'marko-cerovac/material.nvim'
-    -- removed in favor of telescope file_browser
-    -- use {
-    --     	'kyazdani42/nvim-tree.lua',
-    --     		requires = 'kyazdani42/nvim-web-devicons'
-    -- }
 
     -- ================== DAP Plugins ==================
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap", "folke/neodev.nvim", "nvim-neotest/nvim-nio" } }
@@ -41,9 +39,6 @@ local plugins = function(use)
             { 'neovim/nvim-lspconfig' }, -- Required
             {                            -- Optional
                 'williamboman/mason.nvim',
-                run = function()
-                    pcall(vim.cmd, 'MasonUpdate')
-                end,
             },
             { 'williamboman/mason-lspconfig.nvim' }, -- Optional
 
@@ -73,9 +68,6 @@ local plugins = function(use)
     -- install some plugins for comenting
     use 'terrortylor/nvim-comment'
 
-    -- auto pairs
-    -- use 'jiangmiao/auto-pairs'
-
     use {
         "windwp/nvim-autopairs",
         event = "InsertEnter",
@@ -96,7 +88,7 @@ local plugins = function(use)
         requires = {
             'nvim-lua/plenary.nvim'
         },
-        -- tag = 'release' -- To use the latest release
+        tag = 'release' -- To use the latest release
     }
 
     -- color highlights
@@ -112,18 +104,13 @@ local plugins = function(use)
         end,
         ft = { "markdown" },
     })
-    -- latex preview
-    -- use { 'xuhdev/vim-latex-live-preview' }
 
     use { 'tpope/vim-fugitive' }
 
     use { 'nvim-lua/lsp-status.nvim' }
 end
 
-local packer = require('packer').startup(plugins)
-
--- TODO add harpoon
+)
 
 -- configure plugins
 require("plugins.init")
-return packer
